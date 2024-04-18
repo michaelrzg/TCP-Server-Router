@@ -1,0 +1,36 @@
+Index: src/ServerRouter/TCPServerRouter.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package ServerRouter;\r\n\r\nimport ServerRouter.SThread;\r\n\r\n    import java.net.*;\r\n   import java.io.*;\r\n    import java.util.Scanner;\r\n\r\n    public class TCPServerRouter {\r\n       public static void main(String[] args) throws IOException {\r\n         Socket clientSocket = null; // socket for the thread\r\n         Object [][] RoutingTable = new Object [10][2]; // routing table\r\n           File routerData = new File(\"src/ServerRouter/routerData\");// create routing table\r\n           PrintWriter pw = new PrintWriter(new FileOutputStream(routerData,true));  //this way the edits from serverrouter will never overwrite another entry already in routing table\r\n           int SockNum = 5555; // port number\r\n\t\t\tBoolean Running = true;\r\n\t\t\tint ind = 0; // indext in the routing table\r\n\r\n\t\t\t//Accepting connections\r\n         ServerSocket serverSocket = null; // server socket for accepting connections\r\n         try {\r\n            serverSocket = new ServerSocket(5555);\r\n            System.out.println(\"ServerRouter is Listening on port: 5555.\");\r\n         }\r\n             catch (IOException e) {\r\n               System.err.println(\"Could not listen on port: 5555.\");\r\n               System.exit(1);\r\n            }\r\n\t\t\t// Creating threads with accepted connections\r\n\t\t\twhile (Running == true)\r\n\t\t\t{\r\n\t\t\ttry {\r\n\t\t\t\tclientSocket = serverSocket.accept();\r\n                String [] ip = (clientSocket.getRemoteSocketAddress() + \"\").split(\":\");\r\n                pw.println(ip[0].substring(1));  //this line updates the routing table with a new line holding the clients ip in slot one and a delimiter eg. [clients ip] , [slot for servers ip]\r\n                pw.flush();\r\n                RoutingTable[ind][0] = ip[0].substring(1);\r\n                RoutingTable[ind][1]=clientSocket;\r\n\t\t\t\tSThread t = new SThread(RoutingTable, clientSocket, ind); // creates a thread with a random port\r\n\t\t\t\tt.start(); // starts the thread\r\n\t\t\t\tind++; // increments the index\r\n            System.out.println(\"ServerRouter connected with Client/Server: \" + clientSocket.getInetAddress().getHostAddress());\r\n         }\r\n             catch (IOException e) {\r\n               System.err.println(\"Client/Server failed to connect.\");\r\n               System.exit(1);\r\n            }\r\n\t\t\t}//end while\r\n\r\n\t\t\t//closing connections\r\n\t\t   clientSocket.close();\r\n         serverSocket.close();\r\n\r\n      }\r\n   }\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ServerRouter/TCPServerRouter.java b/src/ServerRouter/TCPServerRouter.java
+--- a/src/ServerRouter/TCPServerRouter.java	(revision a498962b35416f5a76d37f94f90859abf1e57cab)
++++ b/src/ServerRouter/TCPServerRouter.java	(date 1708650107859)
+@@ -1,6 +1,5 @@
+ package ServerRouter;
+ 
+-import ServerRouter.SThread;
+ 
+     import java.net.*;
+    import java.io.*;
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_19\" default=\"true\" project-jdk-name=\"openjdk-18\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision a498962b35416f5a76d37f94f90859abf1e57cab)
++++ b/.idea/misc.xml	(date 1708718934269)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_19" default="true" project-jdk-name="openjdk-18" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_18" default="true" project-jdk-name="openjdk-18" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6bde9ab6-8d7c-4a96-81a0-3e1b9f55ccc6" name="Changes" comment="added code into client and server to be able to send mp4">
+      <change beforePath="$PROJECT_DIR$/src/ServerRouter/TCPServerRouter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ServerRouter/TCPServerRouter.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="dev-gui" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2cK416Azwuaq0L99ZeJCCya64Uc" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;G:/KSU CSE/CS4504-GroupProject/src/Client&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\KSU CSE\CS4504-GroupProject\src\Client" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\KSU CSE\CS4504-GroupProject\src\Client" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6bde9ab6-8d7c-4a96-81a0-3e1b9f55ccc6" name="Changes" comment="" />
+      <created>1707846717546</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1707846717546</updated>
+    </task>
+    <task id="LOCAL-00001" summary="changed how file is accessed, and how the thread finds an entry in routing table">
+      <created>1707848951009</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1707848951009</updated>
+    </task>
+    <task id="LOCAL-00002" summary="changed how file is accessed, and how the thread finds an entry in routing table">
+      <created>1707849878973</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1707849878973</updated>
+    </task>
+    <task id="LOCAL-00003" summary="changed how file is accessed, and how the thread finds an entry in routing table">
+      <created>1707851785707</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1707851785707</updated>
+    </task>
+    <task id="LOCAL-00004" summary="changed how file is accessed, and how the thread finds an entry in routing table">
+      <created>1707852072583</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1707852072583</updated>
+    </task>
+    <task id="LOCAL-00005" summary="changed how file is accessed, and how the thread finds an entry in routing table">
+      <created>1707852623710</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1707852623710</updated>
+    </task>
+    <task id="LOCAL-00006" summary="changed how file is accessed, and how the thread finds an entry in routing table">
+      <created>1707852668285</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1707852668285</updated>
+    </task>
+    <task id="LOCAL-00007" summary="added code into client and server to be able to send mp4">
+      <created>1708642564327</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1708642564327</updated>
+    </task>
+    <task id="LOCAL-00008" summary="added code into client and server to be able to send mp4">
+      <created>1708644479601</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1708644479601</updated>
+    </task>
+    <task id="LOCAL-00009" summary="added code into client and server to be able to send mp4">
+      <created>1708644604327</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1708644604327</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="changed how file is accessed, and how the thread finds an entry in routing table" />
+    <MESSAGE value="added code into client and server to be able to send mp4" />
+    <option name="LAST_COMMIT_MESSAGE" value="added code into client and server to be able to send mp4" />
+  </component>
+</project>
