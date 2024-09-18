@@ -1,11 +1,10 @@
-package Server;
 
 import java.io.*;
 import java.util.Arrays;
 import java.util.Scanner;
 import java.util.Vector;
 
-public class TCPServer {
+public class Main {
     public static Integer[] merge(Integer[] output, Integer[] first, Integer[] second) {
         int i = 0;
         int j = 0;
