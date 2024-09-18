@@ -1,15 +1,12 @@
 package Client;
 
 import java.io.*;
-import java.net.*;
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Random;
-import java.util.Scanner;
 
 public class TCPClient {
     public static void main(String[] args) throws IOException {
-
+        /*
         // Variables for setting up connection and communication
         Socket socket = null; // socket to connect with ServerRouter
         PrintWriter out = null; // for writing to ServerRouter
@@ -29,16 +26,16 @@ public class TCPClient {
             System.err.println("Couldn't get I/O for the connection to: " + routerName);
             System.exit(1);
         }
-
+        */
         // Variables for message passing
-        File file = new File("src/Client/file.txt");
+        File file = new File("file.txt");
 
         PrintWriter writer = new PrintWriter(file);
         //number of values to send passed to arg
-        writer.println(randomDistinct(10));
+        writer.println(randomDistinct(10000));
         writer.println("Bye.");
         writer.close();
-
+/*
         Scanner sc = new Scanner(file);
         String fromServer; // messages received from ServerRouter
         String fromUser; // messages sent to ServerRouter
@@ -88,7 +85,8 @@ public class TCPClient {
         in.close();
 
     }
-
+        */
+    }
     /**
      * Generates a list of 1024 random, non-repeating, integers and assigns them to the values field.
      */
