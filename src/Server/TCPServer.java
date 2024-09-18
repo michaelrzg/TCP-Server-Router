@@ -77,56 +77,7 @@ public class TCPServer {
         final int NUM_OF_THREADS = 8;
 
 
-        // Variables for setting up connection and communication
-        Socket Socket = null; // socket to connect with ServerRouter
-        PrintWriter out = null; // for writing to ServerRouter
-        BufferedReader in = null; // for reading form ServerRouter
-        InetAddress addr = InetAddress.getLocalHost();
-        String host = addr.getHostAddress(); // Server machine's IP
-        String routerName = "10.101.129.70"; // ServerRouter host name
-        int SockNum = 5555; // port number
-
-        // Tries to connect to the ServerRouter
-        try {
-            Socket = new Socket(routerName, SockNum);
-            out = new PrintWriter(Socket.getOutputStream(), true);
-            in = new BufferedReader(new InputStreamReader(Socket.getInputStream()));
-        } catch (UnknownHostException e) {
-            System.err.println("Don't know about router: " + routerName);
-            System.exit(1);
-        } catch (IOException e) {
-            System.err.println("Couldn't get I/O for the connection to: " + routerName);
-            System.exit(1);
-        }
-
-        // Variables for message passing
-        String fromServer; // messages sent to ServerRouter
-        String fromClient; // messages received from ServerRouter
-        String address = "10.101.187.213"; // destination IP (Client)
-
-        // Communication process (initial sends/receives)
-
-        out.println(address);// initial send (IP of the destination Client)
-        fromClient = in.readLine();// initial receive from router (verification of connection)
-        System.out.println("ServerRouter: " + fromClient);
-        // Communication while loop
-        Vector <String> s = new Vector<>();
-               while ((fromClient = in.readLine()) != null) {
-                   s.add(fromClient);
-                   //System.out.println("Client said: " + fromClient);
-                   if (fromClient.equals("Bye.")) // exit statement
-                       break;
-               }
-               fromClient=s.get(0);
-        //array is now received by the server and is in the string fromClient, split into array
-        String[] splitString = fromClient.split(",");
-        //create a wrapper object array to store values
-        Integer[] arrayValues = new Integer[splitString.length];
-        //loop through and insert values into Integer object array to pass by reference
-        // this is o(n) overhead, maybe find better way to copy over values
-        for (int i = 0; i < arrayValues.length; i++) {
-            arrayValues[i] = Integer.parseInt(splitString[i]);
-        }
+        Integer [] arrayValues = new Integer[12];
         //create thread pool
         Thread[] threadpool = new Thread[NUM_OF_THREADS];
         //assign work
@@ -226,11 +177,6 @@ public class TCPServer {
         }
         start = System.currentTimeMillis()-start;
         System.out.println("Total time: "+(start));
-
-        // closing connections
-        out.close();
-        in.close();
-        Socket.close();
     }
 
 }
