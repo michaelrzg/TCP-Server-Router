@@ -31,8 +31,16 @@ class dataGen{
     public static void main(String [] args){
         File file;
         PrintWriter writer;
+        String outputname = "";
         try{
-        file = new File("generated_data.txt");
+        if(args.length>1){
+            outputname = args[1];
+            file = new File(outputname + ".txt");
+        }
+        else{
+            file = new File("generated_data.txt");
+        }
+        
         writer = new PrintWriter(file);
          //number of values to send passed to arg
         writer.println(randomDistinct(Integer.parseInt(args[0])));
