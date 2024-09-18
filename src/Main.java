@@ -90,7 +90,13 @@ public class Main {
         Integer [] arrayValues;
         
         //import data from file into dataString object::String
-        File datafile = new File("input_data.txt");
+        File datafile;
+        if(argpath == ""){
+            datafile = new File("generated_data.txt");
+        }
+        else{
+            datafile = new File(argpath);
+        }
         Scanner sc = new Scanner(datafile);
         dataString = sc.nextLine();
         // split csv data and parse to integers

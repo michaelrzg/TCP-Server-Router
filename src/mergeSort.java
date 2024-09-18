@@ -1,6 +1,4 @@
-package Server;
 
-import java.util.Arrays;
 
 public class mergeSort implements Runnable{
    private Integer [] array;
