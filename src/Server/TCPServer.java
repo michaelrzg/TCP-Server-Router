@@ -1,8 +1,8 @@
 package Server;
 
 import java.io.*;
-import java.net.*;
 import java.util.Arrays;
+import java.util.Scanner;
 import java.util.Vector;
 
 public class TCPServer {
@@ -72,12 +72,36 @@ public class TCPServer {
 
     public static void main(String[] args) throws IOException, InterruptedException {
         //set variable number of threads :
+        int NUM_OF_THREADS = -1;
+        String argpath = "";
+        try {
+            argpath = args[0];
+            NUM_OF_THREADS = Integer.parseInt(args[1]);
+        } catch (Exception e) {
+            System.err.println("Incorrect Usage. Expected usage:\n java TCPServer.java <pathToDataCsv> <# of Threads>");
+        }
+        finally{
+            if(NUM_OF_THREADS==-1){
+                System.err.println("# of Threads not defined. Defaulting to 1.");
+            }
+        }
 
+       
+        String dataString="";
+        Integer [] arrayValues;
+        
+        //import data from file into dataString object::String
+        File datafile = new File("input_data.txt");
+        Scanner sc = new Scanner(datafile);
+        dataString = sc.nextLine();
+        // split csv data and parse to integers
+        String [] dataParsedStrings = dataString.split(",");
+        //init arrayValues array as Integer object 
+        arrayValues = new Integer[dataParsedStrings.length];
+        for (int i=0;i<dataParsedStrings.length;i++){
+            arrayValues[i] =Integer.parseInt(dataParsedStrings[i]);
+        }
 
-        final int NUM_OF_THREADS = 8;
-
-
-        Integer [] arrayValues = new Integer[12];
         //create thread pool
         Thread[] threadpool = new Thread[NUM_OF_THREADS];
         //assign work
